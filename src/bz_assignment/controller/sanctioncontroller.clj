@@ -1,10 +1,14 @@
+;; Sanction controller for sanction list and checking operations
+;; Handles sanction data retrieval and validation
 (ns bz-assignment.controller.sanctioncontroller
   (:require [bz-assignment.validation.check_sanction :as val]))
 
+;; Predefined sanction lists available in the system
 (def sanction-lists
   [{:id 1 :name "Eu Sanctions"}
    {:id 2 :name "Israeli Ministry of Defence Sanction List"}])
 
+;; Mock sanction check results for demonstration purposes
 (def sanction-check-results
   [{:match_score 70
     :list [{:id 1 :name "Eu Sanctions"}]
@@ -27,10 +31,12 @@
              :country "DE"
              :additional_info "N/A"}}])
 
+;; Handles GET /api/sanction-list requests - returns available sanction lists
 (defn sanction-list-handler [_]
   {:status 200
    :body sanction-lists})
 
+;; Handles POST /api/check-sanction requests - validates input and returns mock results
 (defn check-sanction-handler [{:keys [body-params]}]
   (let [errors (val/validate-check-request body-params)]
     (prn :validation-errors errors)

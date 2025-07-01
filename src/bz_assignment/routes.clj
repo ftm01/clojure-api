@@ -1,3 +1,5 @@
+;; Main routing configuration for the API
+;; Defines all endpoints, middleware, and Swagger documentation
 (ns bz-assignment.routes
   (:require
     [reitit.ring :as ring]

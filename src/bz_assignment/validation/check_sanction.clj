@@ -1,8 +1,13 @@
+;; Validation functions for sanction check requests
+;; Ensures proper data format and required fields
 (ns bz-assignment.validation.check_sanction)
 
+;; Helper function to check if a string represents a numeric value
 (defn string-number? [s]
   (and (string? s) (re-matches #"\d+" s)))
 
+;; Validates the complete sanction check request body
+;; Returns a map of validation errors or nil if valid
 (defn validate-check-request [body]
   (let [errors
         (cond-> {}
