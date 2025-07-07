@@ -62,6 +62,22 @@ lein run
 
 The server will start at `http://localhost:3000`
 
+Leiningen must be installed globally in order to be able to run the project via terminal / cmd.
+
+Navigate to the root folder of the project, for example:
+
+```bash
+cd/Desktop/bz-assignment
+```
+
+Only after navigating to the root folder, execute the lein command:
+
+```bash
+lein run
+```
+
+NOTICE: Java17 and Leiningen are e prerequisite and must be installed on the machine.
+
 ## How to test the API
 
 Once it's running, you can try:
