@@ -16,6 +16,8 @@
                  [ring-middleware-format "0.7.5"]]
   :plugins [[lein-environ "1.2.0"]
             [speclj "3.4.6"]]
+  :main bz-assignment.core
+  :aot [bz-assignment.core]
   :profiles
   {:dev {:env {:jwt-secret "my-super-secret-key"
                :api-key "my-api-key"
